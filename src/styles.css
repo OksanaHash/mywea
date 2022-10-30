@@ -41,3 +41,6 @@ p {
   margin: 0 auto;
   padding: 20px;
 }
+#city-name {
+  font-size: 55px;
+}
