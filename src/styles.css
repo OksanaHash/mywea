@@ -16,7 +16,8 @@ h2 {
   color: #773838;
   font-size: 22px;
 }
-img {
+img,
+#sourceLink {
   display: block;
   margin: 0 auto;
   border-radius: 14px;
