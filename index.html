@@ -16,8 +16,15 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-6 fs-2">
+        <div class="col-4 fs-2">
           <h1>Weather in</h1>
+        </div>
+        <div class="col-2 float-left">
+          <img
+            src="http://openweathermap.org/img/wn/04d@2x.png"
+            alt="Clear"
+            id="icon"
+          />
         </div>
         <div class="col-6 text-right">
           <form class="row text-left" id="city-form">
@@ -25,9 +32,7 @@
               <input type="text" id="city-input" placeholder="Enter city" />
             </div>
             <div class="col-auto">
-              <button type="submit" class="btn btn-primary mb-3">
-                Search
-              </button>
+              <button type="submit" class="btn btn-primary mb-3">Search</button>
             </div>
             <div class="col-auto">
               <button
@@ -43,7 +48,7 @@
       </div>
       <div class="row">
         <div class="col-4 fs-1 text-left fw-bold">
-          <h3><span  id="city-name">Berlin</span></h3>
+          <h3><span id="city-name">Berlin</span></h3>
         </div>
         <div class="col-3 fs-1 text-center fw-bold">
           <h2>
@@ -68,12 +73,12 @@
         </div>
       </div>
       <div class="row text-center">
-        <div class="col-4 fs-5" >
+        <div class="col-4 fs-5">
           <h2>
             <span id="current-date">Sunday 18.09.2022</span>
           </h2>
         </div>
-        <div class="col-2 fs-5 align-middle"">
+        <div class="col-2 fs-5 align-middle">
           <h2>
             <span id="current-time">22:30</span>
           </h2>
@@ -91,9 +96,10 @@
           </h2>
         </div>
         <div class="col-2 fs-5 align-middle">
-          <h2>Visibility<br />
+          <h2>
+            Visibility<br />
             <span id="visibility">12</span> km
-            </h2>
+          </h2>
         </div>
       </div>
       <br />
@@ -126,10 +132,12 @@
 
     <img src="img/weather.jpg" alt="Weather" />
     <div id="sourceLink">
-    <a  href="https://github.com/OksanaHash/mywea" target="_blank">Open-source code</a>
-    , by Oksana Hashemi 
-  </div>
-  <br/>
+      <a href="https://github.com/OksanaHash/mywea" target="_blank"
+        >Open-source code</a
+      >
+      , by Oksana Hashemi
+    </div>
+    <br />
     <script src="src/index.js"></script>
   </body>
 </html>

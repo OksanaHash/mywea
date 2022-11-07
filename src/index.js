@@ -6,7 +6,7 @@ function formatDate(now) {
     "Wednesday",
     "Thuesday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
   let months = [
     "January",
@@ -20,7 +20,7 @@ function formatDate(now) {
     "September",
     "October",
     "November",
-    "December"
+    "December",
   ];
   let day = days[now.getDay()];
   let month = months[now.getMonth()];
@@ -45,6 +45,12 @@ function showWeather(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
   let visibility = document.querySelector("#visibility");
   visibility.innerHTML = Math.round(response.data.visibility / 1000);
+  celsiumTemp = response.data.main.temp;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function searchCity(event) {
@@ -59,13 +65,13 @@ function searchCity(event) {
 function temperatureToCelsium(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = 19;
+  temperature.innerHTML = Math.round(celsiumTemp);
 }
 
 function temperatureToFahrenheit(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = 66;
+  temperature.innerHTML = Math.round((celsiumTemp * 9) / 5 + 32);
 }
 
 function retrievePosition(position) {
@@ -79,6 +85,14 @@ function searchLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
+
+let celsiumTemp = null;
+let city = "Kyiv";
+let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+let units = "metric";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+axios.get(apiUrl).then(showWeather);
+
 let form = document.querySelector("#city-form");
 form.addEventListener("submit", searchCity);
 let button = document.querySelector("#current-button");
@@ -89,6 +103,7 @@ currentDate.innerHTML = formatDate(new Date());
 
 let currentTime = document.querySelector("#current-time");
 currentTime.innerHTML = formatTime(new Date());
+
 let celsium = document.querySelector("#celsius-link");
 celsium.addEventListener("click", temperatureToCelsium);
 
