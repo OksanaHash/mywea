@@ -45,3 +45,18 @@ p {
 #city-name {
   font-size: 55px;
 }
+.week-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #4a2c2c;
+}
+.week-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+.week-forecast-temps {
+  font-size: 13px;
+}
+.week-forecast-temp-min {
+  opacity: 0.5;
+}
