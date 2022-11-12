@@ -29,6 +29,31 @@ function formatDate(now) {
 function formatTime(now) {
   return `${now.getHours()}:${now.getMinutes()}`;
 }
+function displayWeekForecast() {
+  console.log(" displayWeekForecast();");
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row text-center">`;
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thuesday", "Friday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2 day">
+            <div class="week-forecast-date">${day}</div>
+            <img
+              src="http://openweathermap.org/img/wn/04d@2x.png"
+              alt="Clear"
+              width="42"
+            />
+            <div class="week-forecast-temps">
+              <span class="week-forecast-temp-max"> 22°C</span>
+              <span class="week-forecast-temp-min">18°C</span>
+            </div>
+          </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function showWeather(response) {
   let temperature = document.querySelector("#temperature");
@@ -85,7 +110,7 @@ function searchLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
-
+displayWeekForecast();
 let celsiumTemp = null;
 let city = "Kyiv";
 let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
