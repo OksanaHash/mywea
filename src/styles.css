@@ -64,7 +64,7 @@ p {
   color: #4a2c2c;
 }
 .week-forecast-date {
-  font-size: 16px;
+  font-size: 3.5vw;
   opacity: 0.5;
 }
 .week-forecast-temps {
