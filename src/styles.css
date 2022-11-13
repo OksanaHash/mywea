@@ -8,13 +8,13 @@ body {
 h1 {
   color: #4a2c2c;
   text-align: left;
-  font-size: 30px;
+  font-size: 16em;
   margin-top: 0;
 }
 h2 {
   text-align: center;
   color: #773838;
-  font-size: 22px;
+  font-size: 2em;
 }
 img,
 #sourceLink {
@@ -38,12 +38,11 @@ p {
   margin: 0px auto;
 }
 .container {
-  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
 }
 #city-name {
-  font-size: 55px;
+  font-size: 300%;
 }
 .week-forecast {
   margin-top: 20px;

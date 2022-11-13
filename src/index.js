@@ -29,6 +29,11 @@ function formatDate(now) {
 function formatTime(now) {
   return `${now.getHours()}:${now.getMinutes()}`;
 }
+function formatTime(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let currentTime = document.querySelector("#current-time");
+  currentTime.innerHTML = date.toLocaleTimeString("it-IT");
+}
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -43,6 +48,7 @@ function formatDay(timestamp) {
     "Friday",
     "Saturday",
   ];
+
   console.log(days[day]);
   return days[day];
 }
@@ -79,6 +85,7 @@ function displayWeekForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+  formatTime(response.data.current.dt);
 }
 
 function getForecast(coordinates) {
@@ -148,6 +155,3 @@ button.addEventListener("click", searchLocation);
 
 let currentDate = document.querySelector("#current-date");
 currentDate.innerHTML = formatDate(new Date());
-
-let currentTime = document.querySelector("#current-time");
-currentTime.innerHTML = formatTime(new Date());
