@@ -16,25 +16,24 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-4 fs-2">
-          <h1>Weather in</h1>
-        </div>
-        <div class="col-2 float-left">
+        <span class="col-4">
+          <h1><br />Weather in</h1>
+        </span>
+        <div class="col-3">
           <img
             src="http://openweathermap.org/img/wn/04d@2x.png"
             alt="Clear"
             id="icon"
           />
         </div>
-        <div class="col-6 text-right">
+        <div class="col-5 text-right">
+          <br /><br />
           <form class="row text-left" id="city-form">
             <div class="col-auto">
               <input type="text" id="city-input" placeholder="Enter city" />
             </div>
             <div class="col-auto">
               <button type="submit" class="btn btn-primary mb-3">Search</button>
-            </div>
-            <div class="col-auto">
               <button
                 type="button"
                 class="btn btn-success mb-3"
@@ -47,55 +46,62 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-4 fs-1 text-left fw-bold">
-          <h3><span id="city-name">Berlin</span></h3>
+        <div class="col-6 text-center">
+          <span id="city-name">Berlin</span>
         </div>
-        <div class="col-3 fs-1 text-center fw-bold">
+        <div class="col-2 text-center">
+          <span class="temperature" id="temperature"> 19°C </span>
+        </div>
+        <div class="col-2">
           <h2>
-            <span class="temperature" id="temperature">19</span>
-            <span class="units">°C </span>
+            <div class="cell feels-like">
+              <br />Feels like <br />
+              <span id="feels-like">18</span>
+              °C
+            </div>
           </h2>
         </div>
-        <div class="col-3 fs-5 text-center">
+        <div class="col-2 text-center">
           <h2>
-            Feels like <br />
-            <span id="feels-like">18</span>
-            °C
-          </h2>
-        </div>
-        <div class="col-2 fs-5 text-center">
-          <h2>
-            <span id="sky">Sunny</span>
+            <br />
+            <span id="sky" class="cell">Sunny</span>
           </h2>
         </div>
       </div>
+      <br />
       <div class="row text-center">
-        <div class="col-4 fs-5">
+        <div class="col-4 cell">
           <h2>
-            <span id="current-date">Sunday 18.09.2022</span>
+            <span id="current-date" class="cell">Sunday 18.09.2022</span>
           </h2>
         </div>
-        <div class="col-2 fs-5 align-middle">
+        <div class="col-2 align-middle cell">
           <h2>
-            <span id="current-time">22:30</span>
+            <span id="current-time" class="cell">22:30</span>
           </h2>
         </div>
-        <div class="col-2 fs-5">
+        <div class="col-2">
           <h2>
-            Humidity <br />
-            <span id="humidity">78</span> %
+            <div class="cell">
+              Humidity <br />
+              <span id="humidity">78</span> %
+            </div>
           </h2>
         </div>
-        <div class="col-2 fs-5">
+        <div class="col-2">
           <h2>
-            Wind<br />
-            <span id="wind">12.2</span> m/s
+            <div class="cell">
+              Wind<br />
+              <span id="wind">12.2</span> m/s
+            </div>
           </h2>
         </div>
-        <div class="col-2 fs-5 align-middle">
+        <div class="col-2 align-middle">
           <h2>
-            Visibility<br />
-            <span id="visibility">1</span> km
+            <div class="cell">
+              Visibility<br />
+              <span id="visibility">1</span> km
+            </div>
           </h2>
         </div>
       </div>

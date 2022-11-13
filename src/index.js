@@ -97,7 +97,7 @@ function getForecast(coordinates) {
 
 function showWeather(response) {
   let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = Math.round(response.data.main.temp);
+  temperature.innerHTML = Math.round(response.data.main.temp) + "°c";
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = response.data.name;
   let feelsLike = document.querySelector("#feels-like");
